@@ -1,5 +1,5 @@
 get '/' do
-  @events = Event.all
+  @events = Event.order("date")
   erb :index
 end
 
@@ -9,10 +9,16 @@ get '/events/:id/show' do |id|
 end
 
 get '/events/new' do
-  erb :event_show
-  #TODO IMPLEMENT ME
+  erb :create_event
 end
 
 post '/events/create' do
-  #TODO IMPLEMENT ME
+  @event = Event.new(params[:event])
+  @events = Event.all
+  if @event.save
+    erb :event_show
+  else
+    @errors = @event.errors.full_messages
+    erb :errors
+  end
 end

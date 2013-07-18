@@ -8,7 +8,7 @@ end
 
 
 def valid_date
-  errors.add(:date, "date cannot be in the past") if date < Date.today
+  errors.add(:date, "date cannot be in the past") if date && date < Date.today
 end
 
 

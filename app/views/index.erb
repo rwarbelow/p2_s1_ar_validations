@@ -1,5 +1,16 @@
-  <ul>
-    <% @events.each do |event| %>
-      <li><a href="/events/<%=event.id%>/show"><%=event.date%></a> - <%=event.title%></li>
-    <% end %>
-  </ul>
+
+<div class="event_container">
+  <h1>Upcoming Events</h1>
+  <table>
+  <tr>
+    <th>Date</th>
+    <th>Event</th>
+  </tr>
+  <% @events.each do |event| %>
+  <tr>
+    <td><%= event.date %></td>
+    <td><a href="/events/<%=event.id%>/show"><%= event.title %></a></td>
+  </tr>
+  <% end %>
+  </table>
+</div>

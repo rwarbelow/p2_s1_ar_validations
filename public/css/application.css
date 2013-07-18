@@ -1,6 +1,6 @@
 .container {
   margin: 20px auto;
-  width: 800px;
+  width: 900px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
@@ -26,9 +26,9 @@ nav .brand, nav .brand a {
 }
 
 nav ul {
-  display: inline-block;
-  width: 30%;
-  text-align: right;
+  position: fixed;
+  top: 10px;
+  right:10px;
 }
 
 nav li {
@@ -73,3 +73,13 @@ form.quirks {
   margin-right: 20px;
   width: 200px;
 }
+
+table th, td {
+  width: 100px;
+  padding: 10px;
+}
+
+table th {
+
+}
+
