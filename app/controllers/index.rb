@@ -18,7 +18,8 @@ post '/events/create' do
   if @event.save
     erb :event_show
   else
-    @errors = @event.errors.full_messages
+    @params = params
+    @individual_messages = @event.errors.messages
     erb :errors
   end
 end
